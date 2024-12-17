@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { TilesRenderer } from '3d-tiles-renderer'
 import Tileset from '@/assets/tiles/small-town/tileset.json?url'
+// 引入three.js 0.157.0 之前的版本0.163.0 废弃了webgl1的支持，高德是webgl1
 import * as THREE from 'three'
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
