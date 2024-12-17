@@ -1,6 +1,33 @@
+<script setup lang="ts">
+const route = useRoute()
+</script>
+
 <template>
-  <main class="p-(x-4 y-10) text-(center dark:gray-200 gray-700) font-sans">
-    <router-view />
-    <Footer />
-  </main>
+  <template v-if="route.path !== '/map'">
+    <main class="p-(x-4 y-10) text-(center) font-sans">
+      <Suspense>
+        <template #fallback>
+          <div class="h-screen flex items-center justify-center">
+            <div class="text-2xl font-bold">
+              Loading...
+            </div>
+          </div>
+        </template>
+        <router-view />
+      </Suspense>
+      <Footer />
+    </main>
+  </template>
+  <template v-else>
+    <Suspense>
+      <template #fallback>
+        <div class="h-screen flex items-center justify-center">
+          <div class="text-2xl font-bold">
+            Loading...
+          </div>
+        </div>
+      </template>
+      <router-view />
+    </Suspense>
+  </template>
 </template>

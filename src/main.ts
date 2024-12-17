@@ -11,3 +11,7 @@ const app = createApp(App)
 
 app.use(router)
 app.mount('#app')
+
+window._AMapSecurityConfig = {
+  securityJsCode: import.meta.env.VITE_GAODE_MAP_SECRET,
+}

@@ -24,7 +24,7 @@ export default antfu({
         'error',
         'PascalCase',
         {
-        // 为false检查全部组件，true 检查注册组件（对unplugin-vue-components无效），
+          // 为false检查全部组件，true 检查注册组件（对unplugin-vue-components无效），
           registeredComponentsOnly: false,
           ignores: [],
         },
@@ -36,6 +36,10 @@ export default antfu({
     rules: {
       // tsconfig.json中的key值排序
       'sort-keys': 'off',
+      'jsonc/sort-keys': 'off',
     },
+  },
+  {
+    ignores: ['cursorrules'],
   },
 ])
